@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
-<meta http-equiv="refresh" content="0; url=https://dense-education-decimal-carry.trycloudflare.com"/>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
 <title>CaptionFlow</title>
 <meta property="og:title" content="CaptionFlow"/>
 <meta property="og:description" content="AI-powered caption correction for video, by Heartfulness Media."/>
@@ -10,9 +12,29 @@
 <meta property="og:url" content="https://papilraj24.github.io/captionflow-app/"/>
 <meta property="og:type" content="website"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<script>window.location.replace("https://dense-education-decimal-carry.trycloudflare.com");</script>
+<script>
+// This page itself never changes, so it's safe for it to be cached by the
+// browser or GitHub's CDN. The actual redirect target is fetched fresh on
+// every load from raw.githubusercontent.com (updates instantly on push,
+// unlike the Pages CDN which can lag) with a cache-busting query param as
+// a second safety net against any caching layer in between.
+var CURRENT_URL_SOURCE = 'https://raw.githubusercontent.com/papilraj24/captionflow-app/main/current-url.txt';
+
+fetch(CURRENT_URL_SOURCE + '?_=' + Date.now(), { cache: 'no-store' })
+  .then(function(r) { return r.text(); })
+  .then(function(url) {
+    url = url.trim();
+    document.getElementById('link').href = url;
+    document.getElementById('link').textContent = url;
+    window.location.replace(url);
+  })
+  .catch(function() {
+    document.getElementById('status').textContent =
+      'Could not reach the redirect target. Try reloading, or contact the app owner.';
+  });
+</script>
 </head>
 <body>
-<p>Redirecting to <a href="https://dense-education-decimal-carry.trycloudflare.com">CaptionFlow</a>…</p>
+<p id="status">Redirecting to <a id="link" href="#">CaptionFlow</a>…</p>
 </body>
 </html>
