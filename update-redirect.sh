@@ -24,6 +24,12 @@ cat > index.html <<HTML
 <meta charset="UTF-8"/>
 <meta http-equiv="refresh" content="0; url=$NEW_URL"/>
 <title>CaptionFlow</title>
+<meta property="og:title" content="CaptionFlow"/>
+<meta property="og:description" content="AI-powered caption correction for video, by Heartfulness Media."/>
+<meta property="og:image" content="https://papilraj24.github.io/captionflow-app/og-image.png"/>
+<meta property="og:url" content="https://papilraj24.github.io/captionflow-app/"/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary_large_image"/>
 <script>window.location.replace("$NEW_URL");</script>
 </head>
 <body>
@@ -32,7 +38,7 @@ cat > index.html <<HTML
 </html>
 HTML
 
-git add index.html
+git add index.html og-image.png
 git commit -q -m "Update redirect target to $NEW_URL"
 git push -q
 echo "$(date '+%Y-%m-%d %H:%M:%S') Redirect updated -> $NEW_URL"
